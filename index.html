@@ -1,2 +1,171 @@
 
-<h1> Hello how are you</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights English - Privacy Policy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chosen Palette: Subtle Earth Tones -->
+    <!-- Application Structure Plan: The application transforms the linear privacy policy into an interactive accordion-style SPA. This structure is designed for superior usability and scannability. Instead of forcing users to scroll through a long document, it breaks the policy into thematic, digestible sections (e.g., 'Core Principles', 'Data Usage', 'Third-Party Services'). Users can click any topic to instantly view its details. This on-demand information access makes the content less intimidating and allows users to quickly find answers to specific questions, fulfilling the primary goal of making the policy easily consumable and explorable. -->
+    <!-- Visualization & Content Choices: The source report is purely textual, so traditional data visualizations (charts) are not applicable. The primary "visualization" is structural, organizing the content for clarity and interaction.
+- Report Info -> Privacy Policy Text. Goal -> Inform & Explore. Presentation -> Interactive Accordion. Interaction -> Click to expand/collapse sections. Justification -> This is the most effective method to make dense legal text accessible and user-friendly on a single page. It encourages exploration rather than passive reading. Library/Method -> Vanilla JS for interaction, Tailwind CSS for all styling and layout.
+ -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            padding: 0 1.5rem;
+        }
+        .accordion-button.active + .accordion-content {
+            max-height: 500px; /* Adjust as needed */
+            padding: 1rem 1.5rem 1.5rem 1.5rem;
+        }
+        .accordion-button .icon {
+            transition: transform 0.3s ease-out;
+        }
+        .accordion-button.active .icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-700">
+
+    <div class="container mx-auto max-w-4xl px-4 py-8 sm:py-12 lg:py-16">
+        
+        <header class="text-center mb-10 sm:mb-12">
+            <h1 class="text-3xl sm:text-4xl font-bold text-stone-900 mb-2">Insights English Privacy Policy</h1>
+            <p class="text-base sm:text-lg text-stone-600">Your privacy is important to us. Explore the sections below to understand how we handle information.</p>
+        </header>
+
+        <main id="privacy-app">
+            <div id="accordion-container" class="space-y-4">
+                
+                <!-- Section 1: Core Privacy Principles -->
+                <div class="accordion-item bg-white rounded-lg shadow-sm border border-stone-200">
+                    <button class="accordion-button w-full flex justify-between items-center text-left p-6">
+                        <span class="flex items-center">
+                            <span class="text-emerald-600 mr-4 text-2xl">🛡️</span>
+                            <span class="text-lg font-semibold text-stone-800">Our Core Privacy Principles</span>
+                        </span>
+                        <span class="icon text-emerald-600 text-2xl transform">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="mb-4">This section outlines our fundamental approach to your privacy. We've built "Insights English" from the ground up to be a safe learning environment that respects your personal space and data.</p>
+                        <ul class="space-y-3 list-disc list-inside text-stone-600">
+                            <li><strong class="text-stone-700">No Personally Identifiable Information (PII) Collected:</strong> We do not ask for, collect, store, or process any information that can directly identify you. This includes your name, email, phone number, location, photos, or contacts.</li>
+                            <li><strong class="text-stone-700">No User Accounts:</strong> The app is fully functional without a login system. You can start learning immediately without creating an account or providing any personal credentials.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Section 2: Data Usage & App Functionality -->
+                <div class="accordion-item bg-white rounded-lg shadow-sm border border-stone-200">
+                    <button class="accordion-button w-full flex justify-between items-center text-left p-6">
+                         <span class="flex items-center">
+                            <span class="text-emerald-600 mr-4 text-2xl">⚙️</span>
+                            <span class="text-lg font-semibold text-stone-800">Data Usage & App Functionality</span>
+                        </span>
+                        <span class="icon text-emerald-600 text-2xl transform">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="mb-4">To provide you with a functional and up-to-date learning experience, our app uses certain data and services. This section clarifies what data is used and for what purpose, ensuring transparency about how the app operates.</p>
+                        <div class="space-y-4">
+                            <div>
+                                <h3 class="font-semibold text-stone-800">Grammar Content Data & Firestore</h3>
+                                <p class="text-stone-600">The core educational content (grammar rules, examples, exercises) is stored in <strong class="text-stone-700">Google Cloud Firestore</strong>. This is a secure database used only to deliver and update the app's content. It does not store any of your personal data or interaction history.</p>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-stone-800">Internet Connection</h3>
+                                <p class="text-stone-600">The app requires an internet connection to fetch the latest content from Firestore. This connection is exclusively for content delivery and is not used to collect any information from your device.</p>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-stone-800">Log Data for Error Reporting</h3>
+                                <p class="text-stone-600">In the event of an app error, we may collect anonymous technical information called Log Data (e.g., device type, OS version, IP address) through services like Google Play Services. This data is vital for us to identify and fix bugs, ensuring the app runs smoothly. It is not linked to you personally.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 3: Third-Party Services & Advertising -->
+                <div class="accordion-item bg-white rounded-lg shadow-sm border border-stone-200">
+                    <button class="accordion-button w-full flex justify-between items-center text-left p-6">
+                         <span class="flex items-center">
+                            <span class="text-emerald-600 mr-4 text-2xl">🤝</span>
+                            <span class="text-lg font-semibold text-stone-800">Third-Party Services & Advertising</span>
+                        </span>
+                        <span class="icon text-emerald-600 text-2xl transform">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="mb-4">We use third-party services to support the app's functionality and to keep it free for everyone. This section details these services and explains their role, particularly regarding advertising.</p>
+                        <div class="space-y-4">
+                             <div>
+                                <h3 class="font-semibold text-stone-800">Advertising with Google AdMob</h3>
+                                <p class="text-stone-600">To support the app, we use <strong class="text-stone-700">Google AdMob</strong> to display advertisements. AdMob may use cookies and other technologies to collect data and serve ads that are relevant to you. We do not control the data collected by AdMob. For more information, you can review <a href="https://policies.google.com/privacy" target="_blank" class="text-emerald-600 hover:underline">Google's Privacy Policy</a>.</p>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-stone-800">Other Service Providers</h3>
+                                <p class="text-stone-600">In addition to AdMob and Firestore, the app relies on <strong class="text-stone-700">Google Play Services</strong> and other Firebase SDKs for essential functionalities like error reporting and ensuring the app works correctly on Android devices. These third parties are obligated not to use any data for purposes other than providing these services.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 4: Security & Children's Privacy -->
+                <div class="accordion-item bg-white rounded-lg shadow-sm border border-stone-200">
+                    <button class="accordion-button w-full flex justify-between items-center text-left p-6">
+                         <span class="flex items-center">
+                            <span class="text-emerald-600 mr-4 text-2xl">👶</span>
+                            <span class="text-lg font-semibold text-stone-800">Security & Children's Privacy</span>
+                        </span>
+                        <span class="icon text-emerald-600 text-2xl transform">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="mb-4">We are committed to protecting our users, especially younger learners. This section covers our approach to data security and our policy regarding children's privacy.</p>
+                        <div class="space-y-4">
+                             <div>
+                                <h3 class="font-semibold text-stone-800">Data Security</h3>
+                                <p class="text-stone-600">While we do not collect personal data, we take the security of the app's operational data seriously. We use commercially acceptable means to protect information. However, please remember that no method of internet transmission or electronic storage is 100% secure.</p>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-stone-800">Children's Privacy</h3>
+                                <p class="text-stone-600">"Insights English" is designed for all ages. We do not knowingly collect any personally identifiable information from children under 13, as we do not collect this type of information from any user. If a parent or guardian becomes aware that their child has provided us with any information, please contact us so we can take necessary action.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="text-center mt-10 sm:mt-12 pt-8 border-t border-stone-200">
+            <p class="text-lg font-semibold text-stone-800 mb-2">Policy Updates & Contact</p>
+            <p class="text-stone-600 mb-4">This policy may be updated periodically. We advise you to review this page for any changes. If you have any questions, please contact us at <a href="mailto:[Your Email Address Here]" class="text-emerald-600 hover:underline">[Your Email Address Here]</a>.</p>
+            <p class="text-sm text-stone-500">Last updated: July 2, 2025</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const accordionButtons = document.querySelectorAll('.accordion-button');
+
+            accordionButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const currentlyActiveButton = document.querySelector('.accordion-button.active');
+                    if (currentlyActiveButton && currentlyActiveButton !== button) {
+                        currentlyActiveButton.classList.remove('active');
+                    }
+                    button.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
